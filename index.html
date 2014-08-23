@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post-It</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+
+
+	<div id="menu">
+		<ul>
+			<li class="postit-menu-item add"><i class="fa fa-file fa-2x	"></i></li>
+	    <li class="postit-menu-item save"><i class="fa fa-save fa-2x "></i></li>
+	    <li class="postit-menu-item delete-all"><i class="fa fa-ban fa-2x "></i></li>
+		</ul>
+
+		<div class="user">
+				<div id="signinButton">
+				  <span class="g-signin"
+				    data-scope="https://www.googleapis.com/auth/plus.login"
+            data-clientid="<GOOGLE CLIENT ID FOR PLUSONE>"
+				    data-redirecturi="postmessage"
+				    data-accesstype="offline"
+				    data-cookiepolicy="single_host_origin"
+				    data-callback="signInCallback">
+				  </span> 
+				</div>
+				<div id="signoutButton">
+					<i class="fa fa-power-off fa-2x"></i>
+				</div>
+		</div>
+
+	</div>
+<div id="container">
+
+</div>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function signInCallback(authResult) {
+			$(document).trigger("signin", [authResult])
+		}
+	</script>
+	<script type="text/javascript" src="https://plus.google.com/js/client:plusone.js?onload=start"></script>
+  <!--<script type="text/javascript" src="scripts/jquery.pep.js"></script>-->
+	<script type="text/javascript" src="scripts/postit.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+
+</body>
+</html>
